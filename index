@@ -75,4 +75,143 @@
       margin: 0 0.5rem 0.5rem 0.5rem;
       border: none;
       border-radius: 5px;
-      background: var(-
+      background: var(--nav-bg);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .filter-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card p {
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--header-bg);
+      color: #fff;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nama Kamu</h1>
+    <p>Desainer Grafis | Portfolio Interaktif</p>
+  </header>
+
+  <nav>
+    <a href="#about">Tentang Saya</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Kontak</a>
+    <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</span>
+  </nav>
+
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya seorang desainer grafis yang fokus pada branding, media sosial, dan visual kreatif lainnya. Berikut beberapa karya saya.</p>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+
+    <!-- Filter -->
+    <div class="filter-buttons">
+      <button onclick="filterSelection('all')">Semua</button>
+      <button onclick="filterSelection('branding')">Branding</button>
+      <button onclick="filterSelection('social')">Media Sosial</button>
+      <button onclick="filterSelection('illustration')">Ilustrasi</button>
+    </div>
+
+    <!-- Grid Portfolio -->
+    <div class="grid">
+      <div class="card branding">
+        <img src="desain1.jpg" alt="Desain 1">
+        <p>Branding 1</p>
+      </div>
+      <div class="card social">
+        <img src="desain2.jpg" alt="Desain 2">
+        <p>Media Sosial 1</p>
+      </div>
+      <div class="card illustration">
+        <img src="desain3.jpg" alt="Desain 3">
+        <p>Ilustrasi 1</p>
+      </div>
+      <div class="card branding">
+        <img src="desain4.jpg" alt="Desain 4">
+        <p>Branding 2</p>
+      </div>
+      <div class="card social">
+        <img src="desain5.jpg" alt="Desain 5">
+        <p>Media Sosial 2</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <p>Email: ferresuga@gmail.com</p>
+    <p>Instagram: @ferresuga/p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ferresuga. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Filter Function
+    function filterSelection(category) {
+      const cards = document.querySelectorAll('.grid .card');
+      if(category === 'all') category = '';
+      cards.forEach(card => {
+        if(card.className.includes(category) || category === '') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Tampilkan semua card default
+    filterSelection('all');
+  </script>
+
+</body>
+</html>
