@@ -3,132 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Saya</title>
+  <title>Portfolio Interaktif</title>
   <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --header-bg: #222;
+      --nav-bg: #444;
+      --card-bg: #fff;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #eee;
+      --header-bg: #111;
+      --nav-bg: #333;
+      --card-bg: #2a2a2a;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
     }
+
     header {
-      background: #222;
+      background: var(--header-bg);
       color: #fff;
       padding: 2rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-    }
+
     nav {
-      background: #444;
+      background: var(--nav-bg);
       text-align: center;
       padding: 0.5rem;
     }
-    nav a {
+
+    nav a, .dark-mode-toggle {
       color: #fff;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
-    nav a:hover {
+
+    nav a:hover, .dark-mode-toggle:hover {
       text-decoration: underline;
     }
+
     section {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card p {
-      padding: 1rem;
-      margin: 0;
-    }
-    footer {
+
+    .filter-buttons {
       text-align: center;
-      padding: 1.5rem;
-      background: #222;
-      color: #fff;
-      margin-top: 3rem;
+      margin-bottom: 1.5rem;
     }
-  </style>
-</head>
-<body>
 
-  <header>
-    <h1>Nama Kamu</h1>
-    <p>Desainer Grafis | Kreator Konten | Portfolio Online</p>
-  </header>
-
-  <nav>
-    <a href="#about">Tentang Saya</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Kontak</a>
-  </nav>
-
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <p>
-      Halo, saya seorang desainer grafis yang fokus pada pembuatan desain kreatif untuk branding, media sosial, dan kebutuhan visual lainnya.  
-      Di bawah ini adalah beberapa hasil karya saya.
-    </p>
-  </section>
-
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="desain1.jpg" alt="Desain 1">
-        <p>Deskripsi singkat desain 1</p>
-      </div>
-      <div class="card">
-        <img src="desain2.jpg" alt="Desain 2">
-        <p>Deskripsi singkat desain 2</p>
-      </div>
-      <div class="card">
-        <img src="desain3.jpg" alt="Desain 3">
-        <p>Deskripsi singkat desain 3</p>
-      </div>
-      <!-- Tambahkan lagi sesuai kebutuhan -->
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>📧 Email: kamu@email.com</p>
-    <p>📱 Instagram: @username</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Nama Kamu. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+    .filter-buttons button {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+      border: none;
+      border-radius: 5px;
+      background: var(-
