@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Interaktif</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --header-bg: #222;
+      --nav-bg: #444;
+      --card-bg: #fff;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #eee;
+      --header-bg: #111;
+      --nav-bg: #333;
+      --card-bg: #2a2a2a;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    nav a, .dark-mode-toggle {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover, .dark-mode-toggle:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-buttons button {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+      border: none;
+      border-radius: 5px;
+      background: var(-
